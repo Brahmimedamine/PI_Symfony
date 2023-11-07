@@ -20,16 +20,14 @@ class Participant
     private int $idparticipant;
 
     #[ORM\ManyToOne(targetEntity: Evennement::class)]
-    #[ORM\JoinColumns({
-        #[ORM\JoinColumn(name: "idevent", referencedColumnName: "idevent")]
-    })]
+
+    #[ORM\ManyToOne(targetEntity: Badge::class)]
+    #[ORM\JoinColumn(name: "idevent", referencedColumnName: "idevent")]
     private Evennement $idevent;
 
     #[ORM\ManyToOne(targetEntity: User::class)]
-    #[ORM\JoinColumns({
-        #[ORM\JoinColumn(name: "iduser", referencedColumnName: "iduser")]
-    })]
-    private User $iduser;
+    #[ORM\JoinColumn(name: "iduser", referencedColumnName: "iduser")]
+    private ?User $iduser = null;
 
     public function getDatepar(): \DateTimeInterface
     {

@@ -19,12 +19,9 @@ class Reponse
     #[ORM\Column(type: "date")]
     private \DateTimeInterface $daterep;
 
-    #[ORM\ManyToOne(targetEntity: Reclamation::class)]
-    #[ORM\JoinColumns({
-        #[ORM\JoinColumn(name: "idrec", referencedColumnName: "idrec")]
-    })]
+    #[ORM\ManyToOne(targetEntity: User::class)]
+    #[ORM\JoinColumn(name: "idrec", referencedColumnName: "idrec")]
     private ?Reclamation $idrec;
-
     public function getIdrep(): int
     {
         return $this->idrep;

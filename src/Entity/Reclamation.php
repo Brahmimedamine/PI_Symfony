@@ -26,10 +26,8 @@ class Reclamation
     private string $etatrec;
 
     #[ORM\ManyToOne(targetEntity: User::class)]
-    #[ORM\JoinColumns({
-        #[ORM\JoinColumn(name: "iduser", referencedColumnName: "iduser")]
-    })]
-    private ?User $iduser;
+    #[ORM\JoinColumn(name: "iduser", referencedColumnName: "iduser")]
+    private ?User $iduser = null;
 
     public function getIdrec(): int
     {

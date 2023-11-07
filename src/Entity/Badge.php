@@ -25,15 +25,11 @@ class Badge
     private ?string $typebadge = null;
 
     #[ORM\ManyToOne(targetEntity: User::class)]
-    #[ORM\JoinColumns({
-        #[ORM\JoinColumn(name: "iduser", referencedColumnName: "iduser")]
-    })]
+    #[ORM\JoinColumn(name: "iduser", referencedColumnName: "iduser")]
     private ?User $iduser = null;
 
     #[ORM\ManyToOne(targetEntity: Restaurant::class)]
-    #[ORM\JoinColumns({
-        #[ORM\JoinColumn(name: "id_restau", referencedColumnName: "id_restau")]
-    })]
+    #[ORM\JoinColumn(name: "id_restau", referencedColumnName: "id_restau")]
     private ?Restaurant $idRestau = null;
 
     public function getId(): ?int
